@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>success</title>
+</head>
+<body>
+<h1 th:text="${msg}">哈哈</h1>
+<h2>
+  <a href="https://www.baidu.com/" th:href="${link}">百度一下，你就知道</a><br>
+  <a href="https://www.baidu.com/" th:href="@{link}">百度一下，你就知道</a><br>
+  <a href="https://www.baidu.com/" th:href="@{/link}">百度一下，你就知道</a>
+</h2>
+</body>
+</html>

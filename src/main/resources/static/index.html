@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>index</title>
+</head>
+<body>
+<p>Hello Spring Boot2 Web!</p>
+
+<p>测试Rest映射</p>
+<form action="/user" method="get">
+  <input value="REST-GET 提交" type="submit"/>
+</form>
+<form action="/user" method="post">
+  <input value="REST-POST 提交" type="submit"/>
+</form>
+<form action="/user" method="post">
+  <input name="_method" type="hidden" value="put"/>
+  <input name="_m" type="hidden" value="put"/>
+  <input value="REST-PUT 提交" type="submit"/>
+</form>
+<form action="/user" method="post">
+  <input name="_method" type="hidden" value="delete"/>
+  <input value="REST-DELETE 提交" type="submit"/>
+</form>
+
+<p>测试基本注解</p>
+<ul>
+  <li><a href="/path/3/sub">@PathVariable // 路径变量</a></li>
+  <li><a href="/headers">@RequestHeader // 获取请求头</a></li>
+  <li><a href="/params?age=18&inters=basketball&inters=game">@RequestParam // 获取请求参数</a></li>
+  <li><a href="/cookies">@CookieValue // 获取cookie值</a></li>
+  <li>
+    <form action="/body" method="post">
+      用户名：<input name="username" type="text"/>
+      密码：<input name="password" type="password"/>
+      <input value="提交" type="submit"/>
+    </form>
+  </li>
+  <li><a href="/goto_page">@RequestAttribute // 获取请求域属性</a></li>
+  <li><a href="/matrix1/aaa;low=34;brand=byd,audi,yd">@MatrixVariable // 矩阵变量</a></li>
+  <li><a href="/matrix1/bbb;low=34;brand=byd;brand=audi;brand=yd">@MatrixVariable // 矩阵变量</a></li>
+  <li><a href="/matrix2/1;age=20/2;age=10">@MatrixVariable // 矩阵变量</a></li>
+</ul>
+
+<p>测试Servlet API 和 Map、Model</p>
+<ul>
+  <li><a href="/servlet1">Servlet API 和 Map、Model</a></li>
+</ul>
+
+<p>测试自定义对象</p>
+<form action="/object" method="post">
+  姓名：<input name="userName" type="text" value="zhangsan"/><br>
+  年龄：<input name="age" type="number" value="23"/><br>
+  生日：<input name="birth" type="text" value="2021/01/01"/><br>
+  宠物姓名：<input name="pet.name" type="text" value="小猫"/><br>
+  宠物年龄：<input name="pet.age" type="number" value="2"/><br>
+  <input value="提交" type="submit"/>
+</form>
+
+<p>测试自定义类型转换器</p>
+<form action="/convert" method="post">
+  姓名：<input name="userName" type="text" value="zhangsan"/><br>
+  年龄：<input name="age" type="number" value="23"/><br>
+  生日：<input name="birth" type="text" value="2021/01/01"/><br>
+  宠物姓名：<input name="pet" type="text" value="阿猫,3"/><br>
+  <input value="提交" type="submit"/>
+</form>
+
+</body>
+</html>
